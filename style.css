@@ -1,3 +1,21 @@
 .todo-item {
   display: flex;
 }
+.task-checkbox {
+  vertical-align: top;
+}
+
+.movie-details {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 100px;
+}
+#Creation {
+  text-align: center;
+}
+#TaskCreation,
+#CategoryCreation {
+  display: inline-block;
+  vertical-align: middle;
+  padding-inline: 50px;
+}

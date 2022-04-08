@@ -6,43 +6,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div>
-        <h1>Create your task </h1>
-        <!-- KEEP THE SELECT EMPTY. IT WILL BE FILLED BY JS  -->
-        <select id="categories-list" title="All">
-        </select>
+    <section class="vh-100" style="background-color: #76948D;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+      
+                <div class="card" style="border-radius: 15px;">
+                    <div class="card-body p-5">
+                        <h3 class="mb-3">My Super Achievable Todo List</h3>
+                            <div id="Creation">
+                                <div id="TaskCreation">
+                                    <h4 class="mb-3">Create your task</h4>
+                                    <!-- KEEP THE SELECT EMPTY. IT WILL BE FILLED BY JS  -->
+                                    <select class="form-select border-secondary" style="width: 280px; border-radius: 5px;" id="categories-list" aria-label="Default select example" title="All">
+                                    </select>
+                        
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="custom-select" name="new-task" id="new-task" placeholder="* Add a new task" aria-label="new task" aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" onclick="addTask()" type="button">Add</button>
+                                            </div>
+                                    </div>
+                                </div>
 
-        <input type="text" name="new-task" id="new-task" placeholder="* Add a new task">
+                                <div id="CategoryCreation">
+                                    <h4 class="mb-3">Create your category</h4>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" name="new-category" id="new-category" placeholder="* Add a new category" aria-label="new category" aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" onclick="addCategory()" type="button">Add</button>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+      </div>
     </div>
+  </div>
 
-    <div>
-        <h1>Create your category </h1>
-        <input type="text" name="new-category" id="new-category" placeholder="* Add a new category">
-    </div>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+             <div class="col col-xl-10">
+  
+                 <div class="card" style="border-radius: 15px;">
+                       <div class="card-body p-5">
 
-    <!-- FILTERING DIV -->
-    <div>
-        <h1>filter by category</h1>
-        <!-- KEEP THE SELECT EMPTY. IT WILL BE FILLED BY JS  -->
-        <select id="categories-list-filter" title="All">
-        </select>
-        <!-- DONE for filtering thing -->
-        <div>
-            <input type="checkbox" name="done" id="done">
-            <label for="done">Filter by done</label>
+                            <!-- FILTERING DIV -->
+                            <div>
+                                <h6 class="mb-3">filter by category</h6>
+                                <!-- KEEP THE SELECT EMPTY. IT WILL BE FILLED BY JS  -->
+                                <div class="input-group">
+                                    <select id="categories-list-filter" class="custom-select" title="All">
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="filterTasks()">Filter</button>
+                                    </div>
+                                </div>
+                                <!-- DONE for filtering thing -->
+                                <div>
+                                    <input type="checkbox" name="done" id="done">
+                                    <label for="done">Filter by done</label>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <!-- KEEP THE DIV EMPTY. IT WILL BE FILLED BY JS  -->
+                            <div id="tasks-list"></div>
+
+                    </div>
+                 </div>
+          </div>
         </div>
     </div>
-    <hr>
-
-    <!-- KEEP THE DIV EMPTY. IT WILL BE FILLED BY JS  -->
-    <div id="tasks-list"></div>
+</section>
 
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 <script src="./components/categoryItem.js"></script>
